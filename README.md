@@ -42,10 +42,15 @@ app.listen(8080,()=>{
 //6 - Para iniciar o servidor no prompt
 node app.js
 
-Como usar o Nodemon
+#Como usar o Nodemon
 
 //1 - Instalação do Nodemon apenas em ambiente de desenvolvimento
 npm install -D nodemon
 
 //2 - Para iniciar o servidor
 nodemon app.js
+
+#Como instalar todas as dependências do projeto
+
+//1 - Comando para instalar as dependências do projeto
+npm install 
