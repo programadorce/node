@@ -28,6 +28,11 @@ app.get("/",(req,res) => {
     res.send("Olá Mundo");
 })
 
+//7 - Cria uma rota para página de contato
+app.get("/contato", (req,res) =>{
+    res.end("Página de contato!")
+})
+
 //5 - Executa o servidor, o 3000 é a porta onde o servidor irá rodar, após a vírgula cria um arrow functions
 app.listen(8080,()=>{
     console.log("Servidor iniciado na porta 3000!");
@@ -36,3 +41,11 @@ app.listen(8080,()=>{
 
 //6 - Para iniciar o servidor no prompt
 node app.js
+
+Como usar o Nodemon
+
+//1 - Instalação do Nodemon apenas em ambiente de desenvolvimento
+npm install -D nodemon
+
+//2 - Para iniciar o servidor
+nodemon app.js
