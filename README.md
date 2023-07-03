@@ -74,3 +74,30 @@ app.get("/contato/:id", (req,res) =>{
         status
     })
 });
+
+# Como usar o Insomnia
+
+const express = require("express");
+
+const app = express();
+
+#cria um array de contatos
+const contatos = ["Thiago","Camila","Maria Thaís"]
+
+#Alteração para retornar o array de contatos criado acima
+app.get("/", (req,res) => {
+    return res.json(contatos);
+});
+
+#Alteração para imprimir o valor de acordo com a posição no array contatos
+app.get("/contato/:id", (req,res) =>{
+    const {id}= req.params;
+    return res.json({
+        nome: contatos[id]
+    })
+});
+
+app.listen(3000,() => {
+    console.log("Servidor iniciado na porta 3000");
+});
+

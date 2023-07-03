@@ -2,17 +2,16 @@ const express = require("express");
 
 const app = express();
 
+const contatos = ["Thiago","Camila","Maria Thaís"]
+
 app.get("/", (req,res) => {
-    res.send("Olá Mundo!")
+    return res.json(contatos);
 });
 
 app.get("/contato/:id", (req,res) =>{
     const {id}= req.params;
-    const {status} = req.query;
     return res.json({
-        id,
-        nome: "Thiago",
-        status
+        nome: contatos[id]
     })
 });
 
