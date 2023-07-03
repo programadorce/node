@@ -2,7 +2,9 @@ const express = require("express");
 
 const app = express();
 
-const contatos = ["Thiago","Camila","Maria Thaís"]
+app.use(express.json());
+
+const contatos = ["Thiago","Camila","Maria Thaís"];
 
 app.get("/", (req,res) => {
     return res.json(contatos);
@@ -14,6 +16,14 @@ app.get("/contato/:id", (req,res) =>{
         nome: contatos[id]
     })
 });
+
+app.post("/contatos",(req,res) =>{
+    const {nome} = req.body;
+
+    contatos.push(nome);
+
+    return res.json(contatos)
+})
 
 app.listen(3000,() => {
     console.log("Servidor iniciado na porta 3000");
