@@ -30,6 +30,12 @@ app.put("/contatos/:id", (req, res) => {
     return res.json(contatos);
 });
 
+app.delete("/contatos/:id",(req,res)=>{
+    const {id} = req.params;
+    contatos.splice(id,1);
+    return res.json(contatos)
+});
+
 app.listen(3000, () => {
     console.log("Servidor iniciado na porta 3000");
 });
